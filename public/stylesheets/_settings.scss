@@ -1,0 +1,28 @@
+.rule-item {
+  margin-top: 10px;
+  border-bottom: 1px solid #eee;
+
+  p {
+    margin-left: 12px;
+  }
+  .glyphicon-remove-circle {
+    float: right;
+    margin-right: 17px;
+    color: #e6e6e6;
+
+    &:hover {
+      color: #0A0A0A;
+      cursor: pointer;
+    }
+  }
+}
+
+.sync-setting {
+  .btn-group {
+    width: 100%;
+
+    label.btn {
+      width: 25%;
+    }
+  }
+}

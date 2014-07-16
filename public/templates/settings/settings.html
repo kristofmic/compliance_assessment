@@ -1,0 +1,67 @@
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">Sync Settings</h4>
+        <p class="list-group-item-text">
+          <ul class="list-unstyled">
+            <li class='sync-setting'>
+              <h5>Email</h5>
+              <div class="btn-group">
+                <label class="btn btn-primary" ng-model="emailSync" btn-radio="'on'">On</label>
+                <label class="btn btn-primary" ng-model="emailSync" btn-radio="'off'">Off</label>
+              </div>
+            </li>
+            <li class='sync-setting'>
+              <h5>Contacts</h5>
+              <div class="btn-group">
+                <label class="btn btn-primary" ng-model="contactsSync" btn-radio="'on'">On</label>
+                <label class="btn btn-primary" ng-model="contactsSync" btn-radio="'off'">Off</label>
+              </div>
+            </li>
+            <li class='sync-setting'>
+              <h5>Leads</h5>
+              <div class="btn-group">
+                <label class="btn btn-primary" ng-model="leadsSync" btn-radio="'on'">On</label>
+                <label class="btn btn-primary" ng-model="leadsSync" btn-radio="'off'">Off</label>
+              </div>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">Rules</h4>
+        <form class="list-group-item-text" ng-submit='addRule(newRule)'>
+          <div class="input-group">
+            <input type="text" class="form-control" ng-model="newRule" placeholder="(e.g., follow-up)"/>
+            <span class="input-group-btn">
+              <div class="btn btn-default" type="submit" ng-click='addRule(newRule)'>Add</div>
+            </span>
+          </div>
+          <ul class='list-unstyled'>
+            <li class='rule-item' ng-repeat='rule in rules track by $index'>
+              <p>{{rule}} <span class="glyphicon glyphicon-remove-circle" ng-click='removeRule($index)'></span></p>
+            </li>
+          </ul>
+        </form>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">Email Black List</h4>
+        <form class="list-group-item-text" ng-submit='addBlackList(newBlackList)'>
+          <div class="input-group">
+            <input type="email" ng-required='true' class="form-control" ng-model="newBlackList" placeholder="(e.g., noReply@mailinator.com)"/>
+            <span class="input-group-btn">
+              <div class="btn btn-default" type="submit" ng-click='addBlackList(newBlackList)'>Add</div>
+            </span>
+          </div>
+          <ul class='list-unstyled'>
+            <li class='rule-item' ng-repeat='blackListed in blackList track by $index'>
+              <p>{{blackListed}} <span class="glyphicon glyphicon-remove-circle" ng-click='removeBlackList($index)'></span></p>
+            </li>
+          </ul>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>

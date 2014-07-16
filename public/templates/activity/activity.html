@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm-4">
+    <ul class="list-group profile">
+      <li class="list-group-item">
+        <img src="https://github.com/identicons/jasonlong.png" />
+      </li>
+      <li class="list-group-item row">
+        <div class='col-sm-6'>
+          <span><strong>Processed: </strong></span>
+          <span class="lead text-primary">{{activities.length}}</span>
+        </div>
+        <div class='col-sm-6'>
+        <span><strong>Success: </strong></span>
+          <span class="lead text-primary">{{hitRate | number: 2}}%</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-6">
+    <ul class="list-group">
+      <li class="list-group-item row" ng-repeat='activity in activities'>
+        <div class='col-sm-1'>
+          <span class="label" ng-class="{'label-primary': activity.status === 0, 'label-success': activity.status === 1, 'label-danger': activity.status === -1}">
+            <span class="glyphicon" ng-class="{'glyphicon-floppy-save': activity.status === 0, 'glyphicon-floppy-saved': activity.status === 1, 'glyphicon-floppy-remove': activity.status === -1}"></span>
+          </span>
+        </div>
+        <div class="row">
+         <div class="col-sm-10">
+            <p><strong>{{activity.name}}</strong></p>
+            <p class='btn btn-link' ng-click='expand(activity)' ng-switch="activity.expand">
+              <small ng-switch-when="false">See more</small>
+              <small ng-switch-when="true">See less</small>
+              <small ng-switch-default>See more</small>
+            </p>
+         </div>
+        </div>
+        <div class="row" ng-show='activity.expand'>
+          <div class='col-sm-12'>
+            <p><small>{{activity.type}}</small></p>
+            <p><small>{{activity.dateTime | date: 'medium'}}</small></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
