@@ -1,10 +1,10 @@
-(function(vx, angular) {
+(function(angular) {
 
   var
     dependencies;
 
   dependencies = [];
 
-  vx.nav = angular.module('vx.Nav', dependencies);
+  angular.module('mr.Nav', dependencies);
 
-})(vx, angular);
+})(angular);

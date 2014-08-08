@@ -5,7 +5,7 @@ module.exports = {
     ],
     dest: '<%= jsPath %>/app/templates_module.js',
     options: {
-      module: 'vx.Templates',
+      module: 'mr.Templates',
       standalone: true,
       htmlmin: {
         collapseWhitespace: true,

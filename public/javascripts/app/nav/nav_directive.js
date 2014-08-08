@@ -1,4 +1,4 @@
-(function(nav) {
+(function(anguar) {
 
   var
     definitions;
@@ -7,7 +7,8 @@
     navDirective
   ];
 
-  nav.directive('vxNav', definitions);
+  angular.module('mr.Nav')
+    .directive('mrNav', definitions);
 
   function navDirective() {
 
@@ -15,7 +16,7 @@
       restrict: 'AC',
       link: linker,
       scope: {
-        state: '@vxNav'
+        state: '@mrNav'
       }
     };
 
@@ -34,4 +35,4 @@
 
   }
 
-})(window.vx.nav);
+})(angular);

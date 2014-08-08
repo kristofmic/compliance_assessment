@@ -15,17 +15,15 @@ module.exports = {
       }
     },
     src: [
+      '<%= jsPath %>/app/states/states_module.js',
+      '<%= jsPath %>/app/states/*.js',
       '<%= jsPath %>/app/nav/nav_module.js',
       '<%= jsPath %>/app/nav/*.js',
-      '<%= jsPath %>/app/settings/settings_module.js',
-      '<%= jsPath %>/app/settings/*.js',
-      '<%= jsPath %>/app/activity/activity_module.js',
-      '<%= jsPath %>/app/activity/*.js',
-      '<%= jsPath %>/app/states/states_config.js',
-      '<%= jsPath %>/app/states/*.js',
+      '<%= jsPath %>/app/assessment/assessment_module.js',
+      '<%= jsPath %>/app/assessment/*.js',
       '<%= jsPath %>/app/templates_module.js',
       '<%= jsPath %>/app/main_module.js',
-      '<%= jsPath %>/app/**/*.js',
+      '<%= jsPath %>/app/**/*.js'
     ],
     dest: '<%= jsPath %>/app.js'
   }

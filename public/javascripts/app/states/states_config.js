@@ -1,51 +1,25 @@
-(function(vx, angular) {
+(function(angular) {
   var
-    dependencies,
-    configDefinition;
+    definition;
 
-  dependencies = [
-    'ui.router'
-  ];
-
-  configDefinition = [
+  definition = [
     '$stateProvider',
     '$urlRouterProvider',
     statesConfig
   ];
 
-  vx.states = angular.module('vx.States', dependencies);
-  vx.states.config(configDefinition);
+  angular.module('mr.States')
+    .config(definition);
 
   function statesConfig($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/activity');
+    $urlRouterProvider.otherwise('/assessment');
 
     $stateProvider
-      .state('settings', {
-        url: '/settings',
-        templateUrl: 'settings.html',
-        controller: 'settingsController',
-        resolve: {
-          settings: ['$http', function($http) {
-            return $http.get('/api/settings')
-              .then(function(response) {
-                return response.data;
-              });
-          }]
-        }
-      })
-      .state('activity', {
-        url: '/activity',
-        templateUrl: 'activity.html',
-        controller: 'activityController',
-        resolve: {
-          activities: ['$http', function($http){
-            return $http.get('/api/activity')
-              .then(function(response) {
-                return response.data;
-              });
-          }]
-        }
+      .state('assessment', {
+        url: '/assessment',
+        templateUrl: 'assessment.html',
+        controller: 'assessmentController'
       });
   }
 
-})(vx, angular);
+})(angular);

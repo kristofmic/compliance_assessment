@@ -1,16 +1,15 @@
-(function(vx, angular) {
+(function(angular) {
 
   var
     dependencies;
 
   dependencies = [
-    'vx.States',
-    'vx.Templates',
-    'vx.Nav',
-    'vx.Activity',
-    'vx.Settings'
+    'mr.States',
+    'mr.Templates',
+    'mr.Nav',
+    'mr.Assessment'
   ];
 
-  vx.main = angular.module('vx.Main', dependencies);
+  angular.module('mr.Main', dependencies);
 
-})(vx, angular);
+})(angular);
