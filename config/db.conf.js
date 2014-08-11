@@ -1,0 +1,1 @@
+process.env.DB_CONNECTION = 'mongodb://chris:di37c0k3@kahana.mongohq.com:10027/compliance_assessment';

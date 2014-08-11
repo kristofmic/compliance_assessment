@@ -1,10 +1,13 @@
-var express = require('express');
-var path = require('path');
+var
+  config = require('./config'),
+  express = require('express'),
+  path = require('path'),
+  app = express(),
+  mongoose = require('mongoose'),
+  main = require('./routes/index'),
+  api = require('./routes/api');
 
-var main = require('./routes/index');
-var api = require('./routes/api');
-
-var app = express();
+mongoose.connect(process.env.DB_CONNECTION);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

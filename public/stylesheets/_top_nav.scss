@@ -15,6 +15,10 @@
       a {
         color: #eee;
         font-weight: 300;
+        i {
+          margin-right: 6px;
+          vertical-align: baseline;
+        }
       }
 
       &.active {

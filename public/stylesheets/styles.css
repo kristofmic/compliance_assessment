@@ -5315,6 +5315,9 @@ table-bordered > thead > tr > th, .table-bordered > thead > tr > th, table-borde
   .navbar-default .navbar-nav li a {
     color: #eee;
     font-weight: 300; }
+    .navbar-default .navbar-nav li a i {
+      margin-right: 6px;
+      vertical-align: baseline; }
   .navbar-default .navbar-nav li.active a {
     background-color: #0A0A0A;
     color: #eee; }
