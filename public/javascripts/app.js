@@ -139,7 +139,6 @@
     ];
 
     $scope.requirements = requirements;
-    $scope.requirements[0].starred = true;
   }
 
 })(angular);
