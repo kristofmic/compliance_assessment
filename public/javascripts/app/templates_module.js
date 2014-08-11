@@ -2,7 +2,7 @@ angular.module('mr.Templates', []).run(['$templateCache', function($templateCach
   'use strict';
 
   $templateCache.put('assessment.html',
-    "<div class=\"row\"><div class=\"col-sm-3\"><h2>Left Nav</h2></div><div class=\"col-sm-9\"><table class=\"table table-hover\"><tbody><tr ng-repeat=\"req in requirements\"><td><input type=\"checkbox\" ng-model=\"req.selected\"></td><td><i class=\"glyphicon\" ng-class=\"{'glyphicon-star-empty': !req.starred, 'glyphicon-star': req.starred}\" ng-model=\"req.starred\"></i></td><td>{{req.control_id}}: {{req.control_name}}</td><td>{{req.level}}</td><td>{{req.question_text}}</td><td><select ng-model=\"req.answer\" ng-options=\"answer.value as answer.label for answer in answers\"><option value>- Select -</option></select></td></tr></tbody></table></div></div>"
+    "<div class=\"row\"><div class=\"col-sm-3\"><ol class=\"list-unstyled\"><li ng-repeat=\"domain in domains\">{{domain._id}} - {{domain.domain_name}}</li></ol></div><div class=\"col-sm-9\"><table class=\"table table-hover\"><tbody><tr ng-repeat=\"req in requirements\"><td><input type=\"checkbox\" ng-model=\"req.selected\"></td><td><i class=\"glyphicon\" ng-class=\"{'glyphicon-star-empty': !req.starred, 'glyphicon-star': req.starred}\" ng-model=\"req.starred\"></i></td><td>{{req.control_id}}: {{req.control_name}}</td><td>{{req.level}}</td><td>{{req.question_text}}</td><td><select ng-model=\"req.answer\" ng-options=\"answer.value as answer.label for answer in answers\"><option value>- Select -</option></select></td></tr></tbody></table></div></div>"
   );
 
 

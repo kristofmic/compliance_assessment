@@ -6,13 +6,14 @@
   definitions = [
     '$scope',
     'requirements',
+    'domains',
     assessmentController
   ];
 
   angular.module('mr.Assessment')
     .controller('assessmentController', definitions);
 
-  function assessmentController($scope, requirements) {
+  function assessmentController($scope, requirements, domains) {
     $scope.answers = [
       { label: 'Yes', value: 'y' },
       { label: 'No', value: 'n' },
@@ -21,6 +22,9 @@
     ];
 
     $scope.requirements = requirements;
+    $scope.domains = domains;
+
+    window.scope = $scope;
   }
 
 })(angular);
