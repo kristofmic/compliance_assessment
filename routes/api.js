@@ -27,7 +27,8 @@ function getCsfDomains(req, res) {
     {
       $group: {
         _id: '$domain_id',
-        domain_name: { $first: '$domain_name' }
+        domain_name: { $first: 'domain_name' },
+        requirements_count: { $sum: 1 }
       }
     },
     handleResponse
